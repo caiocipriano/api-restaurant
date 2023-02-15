@@ -4,6 +4,15 @@
       "outDir": "dist",
       "strict": true,
       "lib": ["esnext"],
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "baseUrl": "./",
+      "paths":{
+        "@modules/*":[
+          "src/modules/*"
+        ],
+        "@shared/*":[
+          "src/shared/*"
+        ]
+      }
     }
   }
