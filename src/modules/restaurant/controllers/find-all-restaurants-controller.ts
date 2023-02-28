@@ -1,9 +1,9 @@
 import { RestaurantRepository } from './../infra/restaurant';
-import { Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { FindAllRestaurantsService } from "../services/find-all-restaurants-service";
 
 export class ListAllRestaurantsController{
-    public async index(response:Response){
+    public async index(request:Request,response:Response){
             const repo = new RestaurantRepository();
             const listRestaurants = new FindAllRestaurantsService(repo);
             const restaurant = await listRestaurants.execute();
